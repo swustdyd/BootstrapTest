@@ -1,0 +1,43 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+#popDiscuss{
+  text-align: left;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+#popDiscuss{
+  .discuss-item{
+    border: 1px solid #337ab7;
+  }
+  .discuss-show{
+    overflow: hidden;
+  }
+  .discuss-index{
+    color: #337AB7;
+    font-size: 24px;
+    float: left;
+    width: 20%;
+    text-align: center;
+    font-weight: bold;
+  }
+  .discuss-content{
+    float: left;
+    width: 78%;
+    .content{
+      color: #337ab7;
+    }
+    .name{
+      display: inline-block;
+      width: 30px;
+      text-align: left;
+    }
+  }
+  textarea.form-control{
+    display: inline-block;
+  }
+}
