@@ -14,12 +14,12 @@
                 角色名稱：
                 <input type="text" class="form-control" />
                 角色權限：
-                <span class="text-btn-group">
+                <div class="text-btn-group">
                     <input id="rolePermission" type="text" class="form-control" />
                     <button class="btn btn-xs btn-primary  glyphicon glyphicon-search"
                             onclick="popRoleManageModal('systemSet/rolePermissionChoose.html', '角色權限', 'search-choose')">
                     </button>
-                </span>
+                </div>
 
                 &emsp;<button class="btn btn-xs btn-primary"><b class="glyphicon glyphicon-search"></b>&nbsp;查詢</button>
             </div>
@@ -124,6 +124,12 @@
             $(".pagination li").removeClass("active");
             $(obj).parent().addClass("active");//获取当前a标签的父元素li标签，加入active类，使其处于选中状态
         }
+        $('#roleManageModal').on('hide.bs.modal', function () {
+            // 执行一些动作...
+            $("#roleManageModal .modal-body").html("");//關閉時清空modal-body的內容
+            /*$("#roleManageModalLabel").removeAttr("operation");//清除標誌
+             $("#roleManageModalLabel").removeAttr("key");//清除標誌*/
+        })
     </script>
 </body>
 </html>

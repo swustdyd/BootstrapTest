@@ -1,11 +1,11 @@
 <style type="text/css">
-    #functionManengeChoose{
+    #uniqueTree{
         text-align: left;
         max-height: 400px;
         overflow-y: scroll;
     }
 </style>
-<div id="functionManengeChoose">
+<div id="uniqueTree">
 
 </div>
 <input id="selectContent" value="" type="hidden"/>
@@ -153,7 +153,7 @@
 
             var innerHtml = "<div onclick='treeControl(this,\"" + selectContent + "\",\"" + selectId +"\")' status='" + status + "' tree-level='"  + currentLevel + "' class='treeLevel level" + currentLevel + "' targetContent='" + tree[index].text + "' hasChild='" + hasChild +"' targetId='" + tree[index].uniqueId + "'>" + intentStr + "<span class='" + iconClass
                 + "'></span><span class='treeContent'>" + tree[index].text +"</span></div>";
-            $("#functionManengeChoose").append(innerHtml);
+            $("#uniqueTree").append(innerHtml);
             if(nodes){
                 currentLevel++;
                 createMessageChoose(nodes, selectContent, selectId);
