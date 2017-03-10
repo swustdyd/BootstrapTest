@@ -15,7 +15,12 @@
             窗口名稱：
             <input type="text" class="form-control" />
             父模組：
-            <input id="functionManagefatherModel" type="text" class="form-control" onclick="popModal('systemSet/functionManegeChoose.html', '資料選擇器', 'other')"/>
+            <span class="text-btn-group">
+                <input id="functionManagefatherModel" type="text" class="form-control" />
+                <button class="btn btn-xs btn-primary  glyphicon glyphicon-search"
+                        onclick="popFunctionManageModal('systemSet/functionManegeChoose.html', '資料選擇器', 'other')">
+                </button>
+            </span>
             組織權限：
             <select class="form-control">
                 <option>ALL</option>
@@ -25,10 +30,10 @@
             &emsp;<button class="btn btn-xs btn-primary"><b class="glyphicon glyphicon-search"></b>&nbsp;查詢</button>
         </div>
         <div class="search-div">
-            <button class="btn btn-xs btn-primary" onclick="popModal('systemSet/functionManageCreate.html', '新增', 'create')">
+            <button class="btn btn-xs btn-primary" onclick="popFunctionManageModal('systemSet/functionManageCreate.html', '新增', 'create')">
                 <b class="glyphicon glyphicon-plus-sign"></b>&nbsp;新增
             </button>
-            <button class="btn btn-xs btn-primary" onclick="popModal('systemSet/functionManageCreate.html', '修改', 'modify')">
+            <button class="btn btn-xs btn-primary" onclick="popFunctionManageModal('systemSet/functionManageCreate.html', '修改', 'modify')">
                 <b class="glyphicon glyphicon-minus-sign"></b>&nbsp;修改
             </button>
             <button class="btn btn-xs btn-danger"><b class="glyphicon glyphicon-trash"></b>&nbsp;刪除</button>
@@ -80,16 +85,16 @@
         </table>
         <div class="page-div">
             <ul class="pagination">
-                <li class="disabled"><a onclick="next(this)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
-                <li class="active"><a onclick="next(this)">1 <span class="sr-only">(current)</span></a></li>
-                <li><a onclick="next(this)">2</a></li>
-                <li><a onclick="next(this)">3</a></li>
-                <li><a onclick="next(this)">4</a></li>
-                <li><a onclick="next(this)">5</a></li>
+                <li class="disabled"><a onclick="functionManageSelectPage(this)" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                <li class="active"><a onclick="functionManageSelectPage(this)">1 <span class="sr-only">(current)</span></a></li>
+                <li><a onclick="functionManageSelectPage(this)">2</a></li>
+                <li><a onclick="functionManageSelectPage(this)">3</a></li>
+                <li><a onclick="functionManageSelectPage(this)">4</a></li>
+                <li><a onclick="functionManageSelectPage(this)">5</a></li>
                 <li><span >...</span></li>
-                <li><a onclick="next(this)">lastPage</a></li>
+                <li><a onclick="functionManageSelectPage(this)">lastPage</a></li>
                 <li>
-                    <a onclick="next(this)" aria-label="Next">
+                    <a onclick="functionManageSelectPage(this)" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
@@ -139,7 +144,7 @@
         });*/
     });
 
-    function popModal(url, title, operation) {
+    function popFunctionManageModal(url, title, operation) {
         $("#functionManageModalLabel").html(title);
         $("#functionManageModalLabel").attr("key", "function");
         $("#functionManageModalLabel").attr("operation", operation);
@@ -150,7 +155,7 @@
             $("#functionManageModal .modal-body").html("url為空，加載失敗...");
         }
     }
-    function next(obj){
+    function functionManageSelectPage(obj){
         /*翻页，获取数据，将其填充到页面上
          *
          *

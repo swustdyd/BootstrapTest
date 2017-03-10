@@ -6760,10 +6760,12 @@ button.close {
 #content .search-div {
   margin-bottom: 10px;
 }
-#content select.form-control,  #content .form-control{
+#content select.form-control, #content input.form-control{
   /*修改form-control的padding、margin*/
+  display: inline-block;
   padding:2px 5px;
   margin: 0;
+  height: 25px;
 }
 #content .search-div .form-control {
   /*搜索栏内的form-control为内联元素，规定宽高*/
@@ -6812,14 +6814,16 @@ button.close {
   /* 自定義tree結構樣式 */
   display: none;
 }
-.text-btn-group input{
+#content .text-btn-group input{
   /*自定義輸入框、按鈕組的樣式*/
   border-radius: 3px 0 0 3px;
 }
-.text-btn-group button{
+#content .text-btn-group button.btn,
+#content .search-div .text-btn-group button.btn{
   /*自定義輸入框、按鈕組的樣式*/
   width: 25px;
   height: 25px;
+  min-width: 25px;
   top: -1px;
   left: -5px;
   border-radius: 0 3px 3px 0;
