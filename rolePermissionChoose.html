@@ -264,4 +264,14 @@
             icon.addClass("glyphicon-plus");
         }
     }
+    $("#getData").click(function () {
+        var checkBoxs = $("#uniqueTree input[type=checkbox]");
+        var dataString = "";
+        for(var i = 0; i < checkBoxs.length; i++){
+           if($(checkBoxs[i]).is(":checked")){
+               dataString += $(checkBoxs[i]).closest(".treeLevel").children(".treeContent").text() + "/" + $(checkBoxs[i]).val() + "\n";
+           }
+        }
+        alert(dataString);
+    });
 </script>
